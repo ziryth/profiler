@@ -100,7 +100,7 @@ inline fn _timeStart(label: []const u8) void {
 }
 
 inline fn _timeEnd() void {
-    const profileBlock = profileBlockStack.pop();
+    const profileBlock = profileBlockStack.pop().?;
     const elapsed = timing.rdtsc() - profileBlock.beginTSC;
     const anchor = &globalProfiler.anchors[profileBlock.anchorIndex];
     const parentAnchor = &globalProfiler.anchors[profileBlock.parentIndex];
