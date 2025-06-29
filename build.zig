@@ -10,6 +10,8 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
 
+    _ = b.addModule("profiler", .{ .root_source_file = b.path("src/profiler.zig") });
+
     const lib = b.addLibrary(.{
         .linkage = .static,
         .name = "profiler",
