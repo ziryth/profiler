@@ -2,8 +2,6 @@ const std = @import("std");
 const timing = @import("timing.zig");
 const Source = std.builtin.SourceLocation;
 
-const c = @cImport(@cInclude("sys/resource.h"));
-
 const Anchor = struct {
     elapsedExclusive: u64 = 0,
     elapsedInclusive: u64 = 0,
